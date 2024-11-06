@@ -1,101 +1,195 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Facebook } from "lucide-react";
+import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { type: "spring", duration: 10, bounce: 0 },
+        opacity: { duration: 1 },
+      },
+    },
+  };
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="bg-[url('/background.png')] w-full mx-auto min-h-screen flex flex-col sm:flex-row justify-around items-center px-4 sm:px-10">
+      <div className="lg:pt-0 pt-10 flex lg:flex-row flex-col-reverse justify-start lg:gap-1 gap-8">
+        <div className="md:px-10 pt-4">
+          <div className="relative flex items-center justify-center">
+            <div className="relative">
+              {/* Image Container */}
+              <div className="bg-[#007EBB] w-fit rounded-full lg:m-6 m-4">
+                <Image
+                  priority
+                  src="/me.jpg"
+                  alt="Urooj Sadiq"
+                  height={250}
+                  width={250}
+                  className="lg:w-[18rem] lg:h-[18rem] w-[14rem] h-[14rem] p-4 pb-0 rounded-full"
+                />
+              </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              {/* Motion SVG */}
+              <motion.svg
+                className="absolute inset-0"
+                viewBox="0 0 320 320"
+                initial="hidden"
+                animate="visible"
+                style={{
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+                width="100%"
+                height="100%"
+              >
+                <motion.circle
+                  cx="160"
+                  cy="160"
+                  r="155"
+                  stroke="#ff0055"
+                  strokeWidth="5"
+                  fill="transparent"
+                  variants={draw}
+                  custom={1}
+                />
+              </motion.svg>
+            </div>
+          </div>
+
+          <div className="p-6">
+            <h1 className="md:text-xl text-lg text-white">
+              A{" "}
+              <span className="font-bold text-[#007EBB] md:text-3xl text-2xl">
+                {" "}
+                Designer{" "}
+              </span>
+              who Judges a book by its
+              <span className="text-[#007EBB]"> cover</span>...
+            </h1>
+            <p className="text-sm text-gray-500">
+              Because if the cover does not impress you what else can?
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div>
+          {/* White Arrow SVG */}
+
+          <motion.svg
+            width="150"
+            height="200"
+            viewBox="0 0 500 500"
+            initial="hidden"
+            animate="visible"
+            className="absolute lg:rotate-12 md:rotate-[-35deg] xs:rotate-[-40deg] rotate-[-30deg] lg:top-20 md:top-32 xs:top-28 top-24 lg:left-[34%] md:left-6 xs:left-5 left-0 z-1 pointer-events-none"
+          >
+            <motion.path
+              d="M 2800 1500 C -500 -1200 -100 1200 100 1000"
+              strokeLinecap="round"
+              stroke="rgb(121, 112, 163)"
+              strokeWidth="5"
+              fill="transparent"
+              variants={draw}
+              custom={2}
+            />
+          </motion.svg>
+
+          <p className="text-gray-500 text-xl ml-2 flex justify-center gap-1">
+            It's{" "}
+            <span className="font-bold text-[#007EBB] text-2xl">
+              {" "}
+              Urooj Sadiq
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div className="flex justify-center items-center lg:flex-1">
+        <div className="w-1 h-48 bg-gray-500 lg:mr-4"></div>
+        <div data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1000" className="flex flex-col lg:gap-10 gap-5 lg:p-0 p-6">
+          <h1 className="lg:text-2xl text-xl text-gray-500">
+            I'm a{" "}
+            <span className="lg:text-3xl text-2xl text-[#007EBB] font-bold">
+              Frontend Web Developer
+            </span>
+          </h1>
+
+          <div>
+            <p className="text-gray-300 lg:text-md text-sm">
+              A self-taught UI/UX designer, functioning in the industry for 3+
+              years now.
+              <br />I make meaningful and delightful digital products that
+              create an equilibrium between user needs and business goals.
+            </p>
+
+            <div className="flex gap-6 p-4 border border-transparent">
+              <Link
+                href="/facebook"
+                className="p-1 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
+              >
+                <Facebook color="#007ebb" />
+              </Link>
+              {/* <motion.svg
+      className="absolute inset-0"
+      viewBox="0 0 320 320"
+      initial="hidden"
+      animate="visible"
+      style={{
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+      width="100%"
+      height="100%"
+    >
+      <motion.circle
+        cx="236"
+        cy="234"
+        r="8"
+        stroke="#ff0055"
+        strokeWidth="1"
+        fill="transparent"
+        variants={draw}
+        custom={1}
+      />
+    </motion.svg> */}
+
+              <Link
+                href="https://www.linkedin.com/in/urooj-sadiq-a91031212/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
+              >
+                <Linkedin color="#007ebb" />
+              </Link>
+
+              <Link
+                href="https://github.com/UroojSadiq22"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
+              >
+                <Github color="#007ebb" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
