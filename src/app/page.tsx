@@ -58,7 +58,7 @@ export default function Home() {
                   cx="160"
                   cy="160"
                   r="155"
-                  stroke="#ff0055"
+                  stroke="#6b7280"
                   strokeWidth="5"
                   fill="transparent"
                   variants={draw}

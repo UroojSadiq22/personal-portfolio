@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <main className="bg-gray-300 flex flex-col justify-center items-center p-6">
-      <div className="flex lg:flex-row flex-col-reverse justify-around items-center gap-44">
+      <div className="flex md:flex-row flex-col-reverse justify-around items-center md:gap-44 gap-24">
         <div className="flex gap-6 p-4 border border-transparent">
           <Link
             href="/facebook"
@@ -29,7 +29,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="relative lg:w-[248px] lg:h-[148px] w-[168px]">
+        <div className="relative md:w-[248px] md:h-[148px] w-[168px]">
           <Image
             src="/logobg.png"
             alt="logo"
@@ -43,7 +43,7 @@ export default function Footer() {
             alt="logo"
             width={118}
             height={128}
-            className="absolute lg:left-20 left-10 lg:w-[118px] w-[92px]"
+            className="absolute md:left-20 left-10 md:w-[118px] w-[92px]"
           />
         </div>
       </div>

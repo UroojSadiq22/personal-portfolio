@@ -23,12 +23,12 @@ export default function About() {
       <h1 className="mt-10 md:text-3xl text-2xl text-white text-center font-bold">
         About <span className="text-5xl  text-[#007EBB]">Me</span>
       </h1>
-      <div className="flex justify-around items-center mt-4">
-        <div className="lg:m-4 m-2 p-2">
+      <div className="flex lg:flex-row flex-col-reverse justify-around items-center mt-4">
+        <div className="lg:m-4 m-2 lg:p-2 md:p-8 p-6 flex flex-col items-center">
           <h1 className="text-xl font-bold m-2 text-white">
             Curious about me? Here you have it:
           </h1>
-          <div className="flex flex-col gap-4 w-[30rem] text-sm text-gray-500 text-center">
+          <div className="flex flex-col gap-4 lg:w-[30rem] w-full text-sm text-gray-500 text-center">
             <p>
               Welcome to my corner of the web! I am a passionate developer
               dedicated to crafting innovative solutions and bringing ideas to
@@ -52,7 +52,8 @@ export default function About() {
             </p>
           </div>
           <div className="grid w-[12rem] max-w-sm items-center gap-1.5 my-4">
-              <Button
+          <a href="/ResumeUroojSadiq.pdf" download="Urooj_Sadiq_CV.pdf">
+          <Button
                 variant="outline"
                 className="relative overflow-hidden group hover:text-[#007ebb] border-2 border-[#007ebb] transition-all duration-300 ease-in-out"
               >
@@ -61,12 +62,14 @@ export default function About() {
                 <Download color="#007ebb" /> Download CV
                 </h1>
               </Button>
+          </a>
+              
             </div>
        
         </div>
 
         <div>
-            <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center">
             <div className="relative">
               {/* Image Container */}
               <div className="bg-[#007EBB] w-fit rounded-full lg:m-6 m-4">
@@ -76,7 +79,7 @@ export default function About() {
                   alt="Urooj Sadiq"
                   height={250}
                   width={250}
-                  className="lg:w-[10rem] lg:h-[10rem] w-[6rem] h-[6rem] p-4 pb-0 rounded-full"
+                  className="lg:w-[18rem] lg:h-[18rem] w-[14rem] h-[14rem] p-4 pb-0 rounded-full"
                 />
               </div>
 
@@ -98,7 +101,7 @@ export default function About() {
                   cx="160"
                   cy="160"
                   r="155"
-                  stroke="#ff0055"
+                  stroke="#6b7280"
                   strokeWidth="5"
                   fill="transparent"
                   variants={draw}

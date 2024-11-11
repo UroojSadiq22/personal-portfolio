@@ -32,7 +32,7 @@ const projects = [
     linkedin: "https://www.linkedin.com/posts/urooj-sadiq-a91031212_reactjs-webapp-calculator-activity-7236022844764110850-DyuQ?utm_source=share&utm_medium=member_desktop",
     github: "https://github.com/UroojSadiq22/React.jsCalculatorApp",
     description:
-      "The Calculator App is a versatile tool designed for both basic and scientific calculations. With a sleek and responsive interface, users can easily switch between simple arithmetic functions or advanced scientific calculations and Light mode or Dark mode. The app’s interactive design allows for smooth input handling, real-time results, and a well-organized layout.  Built with React, it demonstrates the power of dynamic rendering and efficient state management.",
+      "The Calculator App is a versatile tool designed for both basic and scientific calculations. Built with the power of React and responsive interface, users can easily switch between simple arithmetic functions or advanced scientific calculations and Light mode or Dark mode.",
   },
   {
     id: "03",
@@ -42,7 +42,7 @@ const projects = [
     linkedin: "https://www.linkedin.com/posts/urooj-sadiq-a91031212_nextjs-webdevelopment-typescript-activity-7243265228774264832-yy8J?utm_source=share&utm_medium=member_desktop",
     github: "https://github.com/UroojSadiq22/StaticResume",
     description:
-      "The Resume Builder App simplifies the resume creation process by an easy-to-use interface. Users can input their details and instantly preview their resume. With features like downloadable PDFs and shareable links, the app provides a complete, streamlined solution for job seekers to create polished, professional resumes. Built with a responsive design, this app empowers users to showcase their skills and experience with confidence.",
+      "The Resume Builder App simplifies the resume creation process by an easy-to-use interface. Users can input their details and instantly preview their resume. With features like downloadable PDFs, the app provides a complete solution for job seekers to create polished, professional resumes.",
   },
   {
     id: "04",
@@ -52,7 +52,7 @@ const projects = [
     linkedin: "https://www.linkedin.com/posts/urooj-sadiq-a91031212_nextjs-ecommerce-watchstore-activity-7255186280060256256-gQav?utm_source=share&utm_medium=member_desktop",
     github: "https://github.com/UroojSadiq22/King-WatchStore",
     description:
-      "The Watch Store App is a stylish e-commerce platform dedicated to luxury and designer watches. Featuring a visually appealing design and smooth navigation, users can browse a curated selection of watches and explore high-quality images. The app offers a secure and user-friendly shopping experience, with functionalities like search, user login, and a simple checkout process. Developed to enhance user engagement, the Watch Store App is a showcase of modern e-commerce capabilities.",
+      "The Watch Store App is a stylish e-commerce platform dedicated to luxury and designer watches. Featuring with functionalities like search, user login, and a simple checkout process and a visually appealing design, users can browse a curated selection of watches and explore high-quality images.",
   },
   {
     id: "05",
@@ -62,7 +62,7 @@ const projects = [
     linkedin: "https://www.linkedin.com/posts/urooj-sadiq-a91031212_webdevelopment-reactjs-expensetracker-activity-7226138083530838017-se5k?utm_source=share&utm_medium=member_desktop",
     github: "https://github.com/UroojSadiq22/ExpenseTrackerApp",
     description:
-      "The Expense Tracker App is a user-friendly tool designed to help users manage their finances effortlessly. The app features a clean, intuitive interface where users can quickly input expenses and view a real-time summary of their spending. Ideal for both personal budgeting and small business expense tracking, this app is built with efficiency in mind, making financial management straightforward and accessible. ",
+      "The Expense Tracker App is a user-friendly tool designed to help users manage their finances effortlessly. Ideal for both personal budgeting and small business expense tracking, this app features a clean, intuitive interface where users can quickly input expenses and view a real-time summary of their spending.",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function Projects() {
               <div data-aos="fade-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
-                data-aos-duration="1000" className="pt-3 pl-2 bg-[#007EBB] rounded-lg">
+                data-aos-duration="1000" className="pt-3 pl-2 bg-[rgb(0,126,187)] rounded-lg">
               <Image
                 src={item.image}
                 alt="p1"
@@ -151,17 +151,17 @@ export default function Projects() {
     {item.id}
   </h1>
   <h1 className="mb-2 text-xl font-bold text-white">{item.title}</h1>
-  <div className="backdrop-blur-xl h-[15rem] md:w-[25rem] w-[16rem] px-8 py-6 rounded-xl shadow-lg relative">
+  <div className="inline-flex backdrop-blur-xl md:w-[25rem] w-[16rem] px-8 py-6 rounded-xl shadow-lg relative">
     <p className="text-sm text-center text-gray-500">
       {item.description}
     </p>
 
     {/* Moving line SVG */}
     <motion.svg
-      className="absolute top-0 left-0 z-[-1]"
+      className="absolute top-0 left-0 z-[-1] hidden lg:block"
       width="100%"
       height="100%"
-      viewBox="0 0 250 150" // Adjust viewBox to match div size
+      viewBox="0 0 400 150" // Adjust viewBox to match div size
       initial="hidden"
       animate="visible"
     >

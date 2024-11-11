@@ -1,23 +1,31 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import usePathname
 import {
   Sheet,
+  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 
 export default function Header() {
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Skills", path: "/skills" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const pathname = usePathname(); // Get current path
+
   return (
     <nav className="flex md:justify-around justify-between text-white h-[64px] mt-4">
-
-
       <div className="relative lg:w-[228px] lg:h-[128px] w-[148px]">
-      
-      <Image
+        <Image
           src="/logobg.png"
           alt="logo"
           width={228}
@@ -34,76 +42,65 @@ export default function Header() {
         />
       </div>
 
-      <div className="hidden md:flex justify-around items-center">
-          <ul>
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex justify-around items-center space-x-6">
+        {navLinks.map((link) => (
+          <ul key={link.name}>
             <li>
               <Link
-                href="/"
-                className="p-4 px-6 rounded-lg hover:bg-blue-700 hover:text-black transition duration-300 ease-in-out"
+                href={link.path}
+                className="p-4 px-6 rounded-lg transition duration-300 ease-in-out relative group"
+                aria-current={pathname === link.path ? "page" : undefined}
               >
-                Home
-                {/* <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span> */}
+                <span
+                  className={`${
+                    pathname === link.path
+                      ? "font-bold text-blue-500"
+                      : "hover:font-bold"
+                  }`}
+                >
+                  {link.name}
+                </span>
+                <span
+                  className={`absolute left-0 bottom-0 h-[2px] transition-all duration-300 ease-in-out ${
+                    pathname === link.path
+                      ? "w-full bg-blue-500"
+                      : "w-0 bg-transparent group-hover:w-full group-hover:bg-blue-500"
+                  }`}
+                ></span>
               </Link>
             </li>
           </ul>
-          <ul>
-            <li>
-              <Link
-                href="/about"
-                className="p-4 px-6 rounded-lg hover:bg-blue-700 hover:text-black transition duration-300 ease-in-out"
-              >
-                About
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link
-                href="/skills"
-                className="p-4 px-6 rounded-lg hover:bg-blue-700 hover:text-black transition duration-300 ease-in-out"
-              >
-                Skills
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link
-                href="/projects"
-                className="p-4 px-6 rounded-lg hover:bg-blue-700 hover:text-black transition duration-300 ease-in-out"
-              >
-                Projects
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link
-                href="/contact"
-                className="p-4 px-6 rounded-lg hover:bg-blue-700 hover:text-black transition duration-300 ease-in-out"
-              >
-                Contact
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        
+        ))}
+      </div>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden mr-4">
         <Sheet>
-  <SheetTrigger className="md:hidden mr-4"><AlignJustify color="#007ebb" /></SheetTrigger>
-  <SheetContent>
-    <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </SheetDescription>
-    </SheetHeader>
-  </SheetContent>
-</Sheet>
+          <SheetTrigger asChild>
+            <AlignJustify color="#007ebb" />
+          </SheetTrigger>
+
+          <SheetContent className="p-8 pt-10 bg-gradient-to-br from-[#007ebb] via-[#33a1ff] to-[#005f8a] h-full flex flex-col">
+            {navLinks.map((link) => (
+              <SheetClose asChild key={link.name}>
+                <Link
+                  href={link.path}
+                  className={`text-xl font-bold ${
+                    pathname === link.path
+                      ? "text-blue-400"
+                      : "hover:text-blue-400"
+                  } transition-all duration-300`}
+                  aria-current={pathname === link.path ? "page" : undefined}
+                >
+                  <h1>{link.name}</h1>
+                  <hr className="my-2" />
+                </Link>
+              </SheetClose>
+            ))}
+          </SheetContent>
+        </Sheet>
+      </div>
     </nav>
   );
 }
