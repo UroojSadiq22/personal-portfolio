@@ -1,7 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { map } from "framer-motion/client";
 import { Download } from "lucide-react";
 import Image from "next/image";
 import CountUp from "react-countup"
