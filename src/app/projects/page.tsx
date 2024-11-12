@@ -71,24 +71,12 @@ export default function Projects() {
     AOS.init({});
   }, []);
 
-  const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { type: "spring", duration: 10, bounce: 0 },
-        opacity: { duration: 1 },
-      },
-    },
-  };
-
   return (
     <main className="bg-[url('/background.png')]">
       <h1 className="lg:mt-20 mt-14 md:text-3xl text-2xl text-white text-center font-bold">Recent <span className="md:text-5xl text-4xl text-[#007EBB]">Projects</span></h1>
       <div className="lg:grid lg:grid-cols-2 flex flex-col items-start lg:mt-12 mt-40 lg:px-10 md:px-6 px-4">
-        {projects.map((item) => (
-          <div className="relative flex lg:flex-row flex-col items-center lg:mx-6 mx-2 lg:mt-10 mt-28">
+        {projects.map((item ,index) => (
+          <div key={index} className="relative flex lg:flex-row flex-col items-center lg:mx-6 mx-2 lg:mt-10 mt-28">
             <div>
               {/* Image Positioned to Overlap */}
               <div data-aos="fade-right"

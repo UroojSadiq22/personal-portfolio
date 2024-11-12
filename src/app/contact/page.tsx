@@ -35,9 +35,9 @@ export default function Contact() {
               data-aos-duration="1500"
               className="text-sm text-gray-500 text-center"
             >
-              Feel free to reach out and start a conversation! Whether you’re
-              here to collaborate, seek advice, or share your vision, I’m
-              thrilled to connect. Let's get in touch and turn thoughts into
+              Feel free to reach out and start a conversation! Whether you&apos;re
+              here to collaborate, seek advice, or share your vision, I&apos;m
+              thrilled to connect. Let&apos;s get in touch and turn thoughts into
               action.
             </p>
           </div>

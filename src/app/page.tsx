@@ -107,7 +107,7 @@ export default function Home() {
           </motion.svg>
 
           <p className="text-gray-500 text-xl ml-2 flex justify-center gap-1">
-            It's{" "}
+            It&apos;s{" "}
             <span className="font-bold text-[#007EBB] text-2xl">
               {" "}
               Urooj Sadiq
@@ -123,7 +123,7 @@ export default function Home() {
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="1000" className="flex flex-col lg:gap-10 gap-5 lg:p-0 p-6">
           <h1 className="lg:text-2xl text-xl text-gray-500">
-            I'm a{" "}
+            I&apos;m a{" "}
             <span className="lg:text-3xl text-2xl text-[#007EBB] font-bold">
               Frontend Web Developer
             </span>

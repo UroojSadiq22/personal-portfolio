@@ -1,8 +1,25 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { map } from "framer-motion/client";
 import { Download } from "lucide-react";
 import Image from "next/image";
+import CountUp from "react-countup"
+
+const stats = [
+  {
+    num: 10,
+    text: "Hours of Working"
+  },
+  {
+    num: 15,
+    text: "Projects"
+  },
+  {
+    num: 4,
+    text: "Years of Experience"
+  },
+]
 
 export default function About() {
     const draw = {
@@ -69,17 +86,34 @@ export default function About() {
         </div>
 
         <div>
+        <div className="container mx-auto">
+          <div className="flex flex-wrap gap-14">
+            {stats.map((item, index) => {
+              return(
+                <div key={index} className="flex gap-4 items-center justify-center">
+                  <CountUp
+                  end={item.num}
+                  duration={5}
+                  delay={2}
+                  className="text-4xl font-extrabold text-[#007EBB]"/>
+                  <div className="w-0.5 h-8 bg-gray-500"></div>
+                  <p className="leading-snug text-white/80">{item.text}</p>
+                </div>
+              )
+            })}
+          </div>
+         </div>
         <div className="relative flex items-center justify-center">
-            <div className="relative">
+            <div className="relative mt-10">
               {/* Image Container */}
               <div className="bg-[#007EBB] w-fit rounded-full lg:m-6 m-4">
                 <Image
                   priority
                   src="/me.jpg"
                   alt="Urooj Sadiq"
-                  height={250}
-                  width={250}
-                  className="lg:w-[18rem] lg:h-[18rem] w-[14rem] h-[14rem] p-4 pb-0 rounded-full"
+                  height={200}
+                  width={200}
+                  className="lg:w-[14rem] lg:h-[14rem] w-[10rem] h-[10rem] p-4 pb-0 rounded-full"
                 />
               </div>
 
@@ -110,6 +144,7 @@ export default function About() {
               </motion.svg>
             </div>
           </div>
+         
          
          
           </div>
