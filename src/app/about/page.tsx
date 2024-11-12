@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import Image from "next/image";
 import CountUp from "react-countup"
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const stats = [
   {
@@ -33,6 +36,10 @@ export default function About() {
         },
       };
 
+      useEffect(() => {
+        AOS.init({});
+      }, []);
+
   return (
 
     <main className="min-h-screen bg-[url('/background.png')]">
@@ -41,10 +48,14 @@ export default function About() {
       </h1>
       <div className="flex lg:flex-row flex-col-reverse justify-around items-center mt-4">
         <div className="lg:m-4 m-2 lg:p-2 md:p-8 p-6 flex flex-col items-center">
-          <h1 className="text-xl font-bold m-2 text-white">
+          <h1 data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className="text-xl font-bold m-2 text-white">
             Curious about me? Here you have it:
           </h1>
-          <div className="flex flex-col gap-4 lg:w-[30rem] w-full text-sm text-gray-500 text-center">
+          <div data-aos="fade-down"
+  data-aos-easing="linear"
+  data-aos-duration="1500" className="flex flex-col gap-4 lg:w-[30rem] w-full text-sm text-gray-500 text-center">
             <p>
               Welcome to my corner of the web! I am a passionate developer
               dedicated to crafting innovative solutions and bringing ideas to
@@ -86,7 +97,7 @@ export default function About() {
 
         <div>
         <div className="container mx-auto">
-          <div className="flex flex-wrap gap-14">
+          <div className="lg:flex lg:flex-wrap grid grid-cols-2 lg:gap-14 gap-8 m-4">
             {stats.map((item, index) => {
               return(
                 <div key={index} className="flex gap-4 items-center justify-center">
@@ -96,7 +107,7 @@ export default function About() {
                   delay={2}
                   className="text-4xl font-extrabold text-[#007EBB]"/>
                   <div className="w-0.5 h-8 bg-gray-500"></div>
-                  <p className="leading-snug text-white/80">{item.text}</p>
+                  <p className="leading-snug text-white/80 lg:text-md text-sm">{item.text}</p>
                 </div>
               )
             })}
