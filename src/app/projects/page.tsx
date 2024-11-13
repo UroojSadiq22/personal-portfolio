@@ -72,7 +72,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <main className="bg-[url('/background.png')]">
+    <main className="bg-[url('/background.png')] overflow-hidden">
       <h1 className="lg:mt-20 mt-14 md:text-3xl text-2xl text-white text-center font-bold">Recent <span className="md:text-5xl text-4xl text-[#007EBB]">Projects</span></h1>
       <div className="lg:grid lg:grid-cols-2 flex flex-col items-start lg:mt-12 mt-40 lg:px-10 md:px-6 px-4">
         {projects.map((item ,index) => (

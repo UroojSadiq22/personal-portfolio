@@ -23,7 +23,8 @@ export default function Home() {
     },
   };
   return (
-    <main className="bg-[url('/background.png')] w-full mx-auto min-h-screen flex flex-col sm:flex-row justify-around items-center px-4 sm:px-10">
+    <main className="bg-[url('/background.png')] container mx-auto min-h-screen overflow-hidden">
+      <div className="flex flex-col sm:flex-row justify-around items-center px-4 sm:px-10">
       <div className="lg:pt-0 pt-10 flex lg:flex-row flex-col-reverse justify-start lg:gap-1 gap-8">
         <div className="md:px-10 pt-4">
           <div className="relative flex items-center justify-center">
@@ -190,6 +191,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
+      
+     
     </main>
   );
 }
