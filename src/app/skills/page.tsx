@@ -84,7 +84,7 @@ export default function Skills() {
 
   return (
     <main className="min-h-screen bg-[url('/background.png')]">
-      <h1 className="mt-10 md:text-3xl text-2xl text-white text-center font-bold">
+      <h1 className="lg:mt-28 mt-24 md:text-3xl text-2xl text-white text-center font-bold">
         Skillset <span className="text-5xl  text-[#007EBB]">Overview</span>
       </h1>
       <div className="flex md:flex-col flex-col-reverse items-center justify-center lg:my-10 my-20 space-y-4">
@@ -113,7 +113,9 @@ export default function Skills() {
                     width={40}
                     className="object-contain"
                   />
-                  <span className="text-sm md:ml-2 ml-6">{icon.displayName}</span>
+                  <span className="text-sm md:ml-2 ml-6">
+                    {icon.displayName}
+                  </span>
                 </div>
               </div>
             ))}
@@ -121,43 +123,28 @@ export default function Skills() {
         ))}
         {/* Skills Image */}
         <div className="mt-10 relative animate-pulse md:rotate-0 rotate-180">
-  {/* Main Image */}
-  <Image
-    priority
-    src="/skills.png"
-    alt="cover"
-    height={400}
-    width={400}
-    className="object-contain"
-  />
+          {/* Main Image */}
+          <Image
+            priority
+            src="/skills.png"
+            alt="cover"
+            height={400}
+            width={400}
+            className="object-contain"
+          />
 
-  {/* Overlay Icon */}
-  {/* <div className="backdrop-blur-lg rounded-full p-4 absolute transform translate-x-1/3 translate-y-1/2 shadow-[0_0_50px_rgba(0,126,187,0.7)]">
-    <Image
-      priority
-      src="/skills-icon.png"
-      alt="cover icon"
-      height={50} // Default height
-      width={50}  // Default width
-      className="object-contain h-10 w-10 md:h-30 md:w-30 lg:h-50 lg:w-50"
-    />
-  </div> */}
-
-  {/* Overlay Icon */}
-  <div className="backdrop-blur-lg rounded-full p-4 absolute md:top-28 top-24 md:right-32 right-24 transform -translate-x-1/2 shadow-[0_0_50px_rgba(0,126,187,0.7)]">
-    <Image
-      priority
-      src="/skills-icon.png"
-      alt="cover icon"
-      height={50} // Default height
-      width={50}  // Default width
-      className="object-contain h-10 w-10 md:h-30 md:w-30 lg:h-50 lg:w-50"
-    />
-  </div>
-
-
-</div>
-
+          {/* Overlay Icon */}
+          <div className="backdrop-blur-lg rounded-full p-4 absolute md:top-28 top-24 md:right-32 right-24 transform -translate-x-1/2 shadow-[0_0_50px_rgba(0,126,187,0.7)]">
+            <Image
+              priority
+              src="/skills-icon.png"
+              alt="cover icon"
+              height={50} // Default height
+              width={50} // Default width
+              className="object-contain h-10 w-10 md:h-30 md:w-30 lg:h-50 lg:w-50"
+            />
+          </div>
+        </div>
       </div>
     </main>
   );

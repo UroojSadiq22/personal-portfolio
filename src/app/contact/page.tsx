@@ -23,7 +23,7 @@ export default function Contact() {
   }, []);
   return (
     <main className="min-h-screen bg-[url('/background.png')]">
-      <div className="flex md:flex-row flex-col justify-center items-center lg:gap-32 ">
+      <div className="lg:mt-24 mt-16 flex md:flex-row flex-col justify-center items-center lg:gap-32 ">
         <div className="lg:w-[30rem] p-6">
           <div className="flex flex-col gap-4 m-6 mb-14">
             <h1 className="md:text-3xl text-2xl text-white text-center font-bold">

@@ -24,7 +24,7 @@ export default function Home() {
   };
   return (
     <main className="bg-[url('/background.png')] overflow-hidden container mx-auto min-h-screen flex flex-col sm:flex-row justify-around items-center">
-      <div className="lg:pt-0 pt-10 flex lg:flex-row flex-col-reverse justify-start lg:gap-1 gap-8">
+      <div className="lg:mt-36 mt-20 lg:pt-0 pt-10 flex lg:flex-row flex-col-reverse justify-start lg:gap-1 gap-8">
         <div className="md:px-10 pt-4">
           <div className="relative flex items-center justify-center">
             <div className="relative">
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center lg:flex-1">
+      <div className="lg:mt-36 flex justify-center items-center lg:flex-1">
         <div className="w-1 h-48 bg-gray-500 lg:mr-4"></div>
         <div data-aos="fade-left"
                 data-aos-offset="300"
@@ -146,30 +146,6 @@ export default function Home() {
               >
                 <Facebook color="#007ebb" />
               </Link>
-              {/* <motion.svg
-      className="absolute inset-0"
-      viewBox="0 0 320 320"
-      initial="hidden"
-      animate="visible"
-      style={{
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-      }}
-      width="100%"
-      height="100%"
-    >
-      <motion.circle
-        cx="236"
-        cy="234"
-        r="8"
-        stroke="#ff0055"
-        strokeWidth="1"
-        fill="transparent"
-        variants={draw}
-        custom={1}
-      />
-    </motion.svg> */}
 
               <Link
                 href="https://www.linkedin.com/in/urooj-sadiq-a91031212/"
