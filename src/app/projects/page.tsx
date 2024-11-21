@@ -28,7 +28,7 @@ const projects = [
     id: "02",
     title: "Calculator App",
     image: "/calculatorproject.JPG",
-    live: "/facebook",
+    live: "https://bright-bombolone-50a1ef.netlify.app/",
     linkedin: "https://www.linkedin.com/posts/urooj-sadiq-a91031212_reactjs-webapp-calculator-activity-7236022844764110850-DyuQ?utm_source=share&utm_medium=member_desktop",
     github: "https://github.com/UroojSadiq22/React.jsCalculatorApp",
     description:

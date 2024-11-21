@@ -139,7 +139,9 @@ export default function Home() {
 
             <div className="flex gap-6 p-4 border border-transparent">
               <Link
-                href="/facebook"
+               href="https://www.facebook.com/profile.php?id=100006590719251"
+               target="_blank"
+               rel="noopener noreferrer"
                 className="p-1 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
               >
                 <Facebook color="#007ebb" />
