@@ -16,6 +16,27 @@ const londrinaOutline = Londrina_Outline({
 const projects = [
   {
     id: "01",
+    title: "Ecommerce Fullstack App",
+    image: "/ecommerceproject.JPG",
+    live: "https://urooj-sadiq-ecommerce.vercel.app/",
+    linkedin:
+      "https://www.linkedin.com/posts/urooj-sadiq-a91031212_nextjs-ecommerce-webdevelopment-activity-7295441563243966464-Nzbi?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXA380BAvsjB_Gh5Ll-uDeZpjeWjgjAtnU",
+    github: "https://github.com/UroojSadiq22/ecommerce",
+    description:
+      "Shop.co is a feature-rich online shopping platform designed for a seamless user experience built with Next.js and Sanity CMS with real-time stock updates, Stripe payments, Clerk authentication, and shipment tracking via ShipEngine.",
+  },
+  {
+    id: "02",
+    title: "Travel Landing Page",
+    image: "/travelproject.JPG",
+    live: "https://travel-web-swart-one.vercel.app/",
+    linkedin:
+      "https://www.linkedin.com/posts/urooj-sadiq-a91031212_travelwebsite-frontenddevelopment-nextjs-activity-7274785448588173312-ATEu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXA380BAvsjB_Gh5Ll-uDeZpjeWjgjAtnU",
+    github: "https://github.com/UroojSadiq22/travel-web",
+    description:
+      "A sleek, responsive React-based landing page for travel enthusiasts, featuring smooth animations, interactive sections, and a modern UI to showcase destinations and services. The page highlights stunning travel destinations with interactive sections, guiding users toward planning their next trip.", },
+  {
+    id: "03",
     title: "Github Finder App",
     image: "/githubproject.JPG",
     live: "https://wondrous-granita-041d9f.netlify.app/",
@@ -26,7 +47,7 @@ const projects = [
       " The GitHub Finder App is a powerful tool designed to help users explore GitHub profiles with ease. The app starts with a simple home page, where users can search for any developer by entering a name or username. ",
   },
   {
-    id: "02",
+    id: "04",
     title: "Calculator App",
     image: "/calculatorproject.JPG",
     live: "https://bright-bombolone-50a1ef.netlify.app/",
@@ -37,7 +58,7 @@ const projects = [
       "The Calculator App is a versatile tool designed for both basic and scientific calculations. Built with the power of React and responsive interface, users can easily switch between simple arithmetic functions or advanced scientific calculations and Light mode or Dark mode.",
   },
   {
-    id: "03",
+    id: "05",
     title: "Resume Builder",
     image: "/resumeproject.JPG",
     live: "https://static-resume-navy.vercel.app/",
@@ -48,7 +69,7 @@ const projects = [
       "The Resume Builder App simplifies the resume creation process by an easy-to-use interface. Users can input their details and instantly preview their resume. With features like downloadable PDFs, the app provides a complete solution for job seekers to create polished, professional resumes.",
   },
   {
-    id: "04",
+    id: "06",
     title: "E-commerce Website",
     image: "/watchecommerceproject.JPG",
     live: "https://king-watch-store-kvj8.vercel.app/",
@@ -59,7 +80,7 @@ const projects = [
       "The Watch Store App is a stylish e-commerce platform dedicated to luxury and designer watches. Featuring with functionalities like search, user login, and a simple checkout process and a visually appealing design, users can browse a curated selection of watches and explore high-quality images.",
   },
   {
-    id: "05",
+    id: "07",
     title: "Expense Tracker",
     image: "/etaproject.JPG",
     live: "https://ubiquitous-sherbet-39e242.netlify.app/",
