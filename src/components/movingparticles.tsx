@@ -1,13 +1,11 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Particles() {
-  const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
+  const [, setWindowWidth] = useState(0);
+  const [, setWindowHeight] = useState(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -26,21 +24,6 @@ export default function Particles() {
     }
   }, []);
 
-  const messages = [
-    "I can help optimize your workflows with AI 🤖",
-    "Let's build something intelligent together 🚀",
-    "AI can boost your productivity ⚡",
-    "Experience the future of automation ✨",
-  ];
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % messages.length);
-    }, 3000); // Change message every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center absolute inset-0 -z-10">
