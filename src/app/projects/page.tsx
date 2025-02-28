@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import Particles from "@/components/movingparticles";
 
 const londrinaOutline = Londrina_Outline({
   weight: "400",
@@ -34,7 +35,8 @@ const projects = [
       "https://www.linkedin.com/posts/urooj-sadiq-a91031212_travelwebsite-frontenddevelopment-nextjs-activity-7274785448588173312-ATEu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXA380BAvsjB_Gh5Ll-uDeZpjeWjgjAtnU",
     github: "https://github.com/UroojSadiq22/travel-web",
     description:
-      "A sleek, responsive React-based landing page for travel enthusiasts, featuring smooth animations, interactive sections, and a modern UI to showcase destinations and services. The page highlights stunning travel destinations with interactive sections, guiding users toward planning their next trip.", },
+      "A sleek, responsive React-based landing page for travel enthusiasts, featuring smooth animations, interactive sections, and a modern UI to showcase destinations and services. The page highlights stunning travel destinations with interactive sections, guiding users toward planning their next trip.",
+  },
   {
     id: "03",
     title: "Github Finder App",
@@ -98,125 +100,128 @@ export default function Projects() {
   }, []);
 
   return (
-    <main className="bg-[url('/background.png')] overflow-hidden">
-      <h1 className="lg:mt-32 mt-24 md:text-3xl text-2xl text-white text-center font-bold">
-        Recent{" "}
-        <span className="md:text-5xl text-4xl text-[#007EBB]">Projects</span>
-      </h1>
-      <div className="lg:grid lg:grid-cols-2 flex flex-col items-start lg:mt-12 mt-40 lg:px-10 md:px-6 px-4">
-        {projects.map((item, index) => (
-          <div
-            key={index}
-            className="relative flex lg:flex-row flex-col items-center lg:mx-6 mx-2 lg:mt-10 mt-28"
-          >
-            <div>
-              {/* Image Positioned to Overlap */}
-              <div
-                data-aos="fade-right"
-                data-aos-offset="300"
-                data-aos-easing="ease-in-sine"
-                data-aos-duration="1000"
-                className="pt-3 pl-2 bg-[rgb(0,126,187)] rounded-lg"
-              >
-                <Image
-                  src={item.image}
-                  alt="p1"
-                  width={364}
-                  height={364}
-                  className="md:w-[20rem] w-[25rem] h-[10rem] object-cover shadow-[0_0_50px_rgba(255,255,255,0.5)]"
-                />
-              </div>
-
-              {/* Icons below the image */}
-              <div className="flex gap-4 mt-2 mb-44">
-                <Link
-                  href={item.live}
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-1 w-8 h-8 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
-                >
-                  <Send color="#007ebb" className="w-5 h-5" />
-                </Link>
-
-                <Link
-                  href={item.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-1 w-8 h-8 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
-                >
-                  <Linkedin color="#007ebb" className="w-5 h-5" />
-                </Link>
-
-                <Link
-                  href={item.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-1 w-8 h-8 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
-                >
-                  <Github color="#007ebb" className="w-5 h-5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Content Div */}
+    <>
+      <Particles />
+      <main className="bg-[url('/background.png')] overflow-hidden">
+        <h1 className="lg:mt-32 mt-24 md:text-3xl text-2xl text-white text-center font-bold">
+          Recent{" "}
+          <span className="md:text-5xl text-4xl text-[#007EBB]">Projects</span>
+        </h1>
+        <div className="lg:grid lg:grid-cols-2 flex flex-col items-start lg:mt-12 mt-40 lg:px-10 md:px-6 px-4">
+          {projects.map((item, index) => (
             <div
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-              className="flex flex-col md:items-end absolute lg:right-[2rem] md:right-[-18rem] right-[-2rem] md:top-[-2rem] top-[-15rem]"
+              key={index}
+              className="relative flex lg:flex-row flex-col items-center lg:mx-6 mx-2 lg:mt-10 mt-28"
             >
-              <h1
-                className={`${londrinaOutline.className} text-7xl text-blue-500`}
-              >
-                {item.id}
-              </h1>
-              <h1 className="mb-2 text-xl font-bold text-white">
-                {item.title}
-              </h1>
-              <div className="inline-flex backdrop-blur-xl md:w-[25rem] w-[16rem] px-8 py-6 rounded-xl shadow-lg relative">
-                <p className="text-sm text-center text-gray-500">
-                  {item.description}
-                </p>
-
-                {/* Moving line SVG */}
-                <motion.svg
-                  className="absolute top-0 left-0 z-[-1] hidden lg:block"
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 400 150" // Adjust viewBox to match div size
-                  initial="hidden"
-                  animate="visible"
+              <div>
+                {/* Image Positioned to Overlap */}
+                <div
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="1000"
+                  className="pt-3 pl-2 bg-[rgb(0,126,187)] rounded-lg"
                 >
-                  <motion.rect
-                    x="0"
-                    y="0"
+                  <Image
+                    src={item.image}
+                    alt="p1"
+                    width={364}
+                    height={364}
+                    className="md:w-[20rem] w-[25rem] h-[10rem] object-cover shadow-[0_0_50px_rgba(255,255,255,0.5)]"
+                  />
+                </div>
+
+                {/* Icons below the image */}
+                <div className="flex gap-4 mt-2 mb-44">
+                  <Link
+                    href={item.live}
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-1 w-8 h-8 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
+                  >
+                    <Send color="#007ebb" className="w-5 h-5" />
+                  </Link>
+
+                  <Link
+                    href={item.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-1 w-8 h-8 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
+                  >
+                    <Linkedin color="#007ebb" className="w-5 h-5" />
+                  </Link>
+
+                  <Link
+                    href={item.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-1 w-8 h-8 backdrop-blur-lg hover:bg-white hover:text-black rounded-full border border-white hover:border-[#007ebb] transition-colors duration-300 ease-in-out"
+                  >
+                    <Github color="#007ebb" className="w-5 h-5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Content Div */}
+              <div
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+                className="flex flex-col md:items-end absolute lg:right-[2rem] md:right-[-18rem] right-[-2rem] md:top-[-2rem] top-[-15rem]"
+              >
+                <h1
+                  className={`${londrinaOutline.className} text-7xl text-blue-500`}
+                >
+                  {item.id}
+                </h1>
+                <h1 className="mb-2 text-xl font-bold text-white">
+                  {item.title}
+                </h1>
+                <div className="inline-flex backdrop-blur-xl md:w-[25rem] w-[16rem] px-8 py-6 rounded-xl shadow-lg relative">
+                  <p className="text-sm text-center text-gray-500">
+                    {item.description}
+                  </p>
+
+                  {/* Moving line SVG */}
+                  <motion.svg
+                    className="absolute top-0 left-0 z-[-1] hidden lg:block"
                     width="100%"
                     height="100%"
-                    rx="15" // Match div border radius
-                    stroke="gray"
-                    strokeWidth="2"
-                    fill="none"
-                    variants={{
-                      hidden: { pathLength: 0 },
-                      visible: {
-                        pathLength: 1,
-                        transition: {
-                          duration: 2,
-                          ease: "easeInOut",
+                    viewBox="0 0 400 150" // Adjust viewBox to match div size
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <motion.rect
+                      x="0"
+                      y="0"
+                      width="100%"
+                      height="100%"
+                      rx="15" // Match div border radius
+                      stroke="gray"
+                      strokeWidth="2"
+                      fill="none"
+                      variants={{
+                        hidden: { pathLength: 0 },
+                        visible: {
+                          pathLength: 1,
+                          transition: {
+                            duration: 2,
+                            ease: "easeInOut",
+                          },
                         },
-                      },
-                    }}
-                  />
-                </motion.svg>
+                      }}
+                    />
+                  </motion.svg>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </main>
+          ))}
+        </div>
+      </main>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Particles from "@/components/movingparticles";
 
 export default function Skills() {
   // Define rows with icons as objects
@@ -83,69 +84,72 @@ export default function Skills() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[url('/background.png')]">
-      <h1 className="lg:mt-28 mt-24 md:text-3xl text-2xl text-white text-center font-bold">
-        Skillset <span className="text-5xl  text-[#007EBB]">Overview</span>
-      </h1>
-      <div className="flex md:flex-col flex-col-reverse items-center justify-center lg:my-10 my-20 space-y-4">
-        {rows.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className={`grid lg:gap-10 gap-6 sm:grid-cols-2 md:grid-cols-4 ${
-              row.length === 5 ? "md:grid-cols-5" : "md:grid-cols-4"
-            }`}
-          >
-            {row.map((icon, index) => (
-              <div
-                data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                data-aos-delay={index * 300}
-                key={icon.id}
-                className="flex flex-col items-center justify-center space-y-2"
-              >
-                <div className="bg-gray-300 inline-flex items-center justify-center rounded-full md:px-4 px-10 py-2">
-                  <Image
-                    priority
-                    src={icon.src}
-                    alt={icon.alt}
-                    height={40}
-                    width={40}
-                    className="object-contain"
-                  />
-                  <span className="text-sm md:ml-2 ml-6">
-                    {icon.displayName}
-                  </span>
+    <>
+      <Particles />
+      <main className="min-h-screen bg-[url('/background.png')]">
+        <h1 className="lg:mt-28 mt-24 md:text-3xl text-2xl text-white text-center font-bold">
+          Skillset <span className="text-5xl  text-[#007EBB]">Overview</span>
+        </h1>
+        <div className="flex md:flex-col flex-col-reverse items-center justify-center lg:my-10 my-20 space-y-4">
+          {rows.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className={`grid lg:gap-10 gap-6 sm:grid-cols-2 md:grid-cols-4 ${
+                row.length === 5 ? "md:grid-cols-5" : "md:grid-cols-4"
+              }`}
+            >
+              {row.map((icon, index) => (
+                <div
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
+                  data-aos-delay={index * 300}
+                  key={icon.id}
+                  className="flex flex-col items-center justify-center space-y-2"
+                >
+                  <div className="bg-gray-300 inline-flex items-center justify-center rounded-full md:px-4 px-10 py-2">
+                    <Image
+                      priority
+                      src={icon.src}
+                      alt={icon.alt}
+                      height={40}
+                      width={40}
+                      className="object-contain"
+                    />
+                    <span className="text-sm md:ml-2 ml-6">
+                      {icon.displayName}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ))}
-        {/* Skills Image */}
-        <div className="mt-10 relative animate-pulse md:rotate-0 rotate-180">
-          {/* Main Image */}
-          <Image
-            priority
-            src="/skills.png"
-            alt="cover"
-            height={400}
-            width={400}
-            className="object-contain"
-          />
-
-          {/* Overlay Icon */}
-          <div className="backdrop-blur-lg rounded-full p-4 absolute md:top-28 top-24 md:right-32 right-24 transform -translate-x-1/2 shadow-[0_0_50px_rgba(0,126,187,0.7)]">
+              ))}
+            </div>
+          ))}
+          {/* Skills Image */}
+          <div className="mt-10 relative animate-pulse md:rotate-0 rotate-180">
+            {/* Main Image */}
             <Image
               priority
-              src="/skills-icon.png"
-              alt="cover icon"
-              height={50} // Default height
-              width={50} // Default width
-              className="object-contain h-10 w-10 md:h-30 md:w-30 lg:h-50 lg:w-50"
+              src="/skills.png"
+              alt="cover"
+              height={400}
+              width={400}
+              className="object-contain"
             />
+
+            {/* Overlay Icon */}
+            <div className="backdrop-blur-lg rounded-full p-4 absolute md:top-28 top-24 md:right-32 right-24 transform -translate-x-1/2 shadow-[0_0_50px_rgba(0,126,187,0.7)]">
+              <Image
+                priority
+                src="/skills-icon.png"
+                alt="cover icon"
+                height={50} // Default height
+                width={50} // Default width
+                className="object-contain h-10 w-10 md:h-30 md:w-30 lg:h-50 lg:w-50"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
