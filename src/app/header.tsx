@@ -23,7 +23,8 @@ export default function Header() {
   const pathname = usePathname(); // Get current path
 
   return (
-    <nav className="fixed top-0 left-0 w-full text-white lg:h-[7rem] h-[5rem] backdrop-blur-xl z-50 shadow-lg flex md:justify-around justify-between">
+    // <nav className="min-w-lg mx-auto fixed top-0 left-0 text-white lg:h-[7rem] h-[5rem] backdrop-blur-xl z-50 shadow-lg flex md:justify-around justify-between">
+    <nav className="max-w-7xl mx-auto fixed top-0 left-0 right-0 z-50 text-white lg:h-[7rem] h-[5rem] backdrop-blur-xl shadow-lg flex md:justify-around justify-between">
       <div className="relative mt-3 lg:w-[228px] lg:h-[128px] w-[148px]">
         <Image
           src="/logobg.png"
@@ -43,7 +44,7 @@ export default function Header() {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex justify-around items-center space-x-6">
+      <div className="hidden lg:flex justify-around items-center space-x-6">
         {navLinks.map((link) => (
           <ul key={link.name}>
             <li>
@@ -75,7 +76,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden m-6">
+      <div className="lg:hidden m-6">
         <Sheet>
           <SheetTrigger asChild>
             <AlignJustify color="#007ebb" />

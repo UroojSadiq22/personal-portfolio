@@ -23,13 +23,13 @@ export default function Home() {
     },
   };
   return (
-    <main className="bg-[url('/background.png')] overflow-hidden container mx-auto min-h-screen flex flex-col sm:flex-row justify-around items-center">
+    <main className="bg-[url('/background.png')] overflow-hidden container mx-auto min-h-screen flex flex-col lg:flex-row justify-around items-center">
       <div className="lg:mt-36 mt-20 lg:pt-0 pt-10 flex lg:flex-row flex-col-reverse justify-start lg:gap-1 gap-8">
         <div className="md:px-10 pt-4">
           <div className="relative flex items-center justify-center">
-            <div className="relative">
+            <div className="">
               {/* Image Container */}
-              <div className="bg-[#007EBB] w-fit rounded-full lg:m-6 m-4">
+              <div className="relative bg-[#007EBB] w-fit rounded-full lg:m-6 m-4">
                 <Image
                   priority
                   src="/me.jpg"
@@ -65,6 +65,25 @@ export default function Home() {
                   custom={1}
                 />
               </motion.svg>
+
+              <motion.svg
+            width="150"
+            height="200"
+            viewBox="0 0 500 500"
+            initial="hidden"
+            animate="visible"
+            className="absolute lg:rotate-12 md:rotate-[-35deg] xs:rotate-[-40deg] rotate-[-30deg] lg:-top-[32%] -top-[38%] lg:left-[78%] md:left-[15%] left-[2%] z-1 pointer-events-none"
+          >
+            <motion.path
+              d="M 2800 1500 C -500 -1200 -100 1200 100 1000"
+              strokeLinecap="round"
+              stroke="rgb(121, 112, 163)"
+              strokeWidth="5"
+              fill="transparent"
+              variants={draw}
+              custom={2}
+            />
+          </motion.svg>
             </div>
           </div>
 
@@ -87,24 +106,7 @@ export default function Home() {
         <div>
           {/* White Arrow SVG */}
 
-          <motion.svg
-            width="150"
-            height="200"
-            viewBox="0 0 500 500"
-            initial="hidden"
-            animate="visible"
-            className="absolute lg:rotate-12 md:rotate-[-35deg] xs:rotate-[-40deg] rotate-[-30deg] lg:top-20 md:top-32 xs:top-28 top-24 lg:left-[34%] md:left-6 xs:left-5 left-0 z-1 pointer-events-none"
-          >
-            <motion.path
-              d="M 2800 1500 C -500 -1200 -100 1200 100 1000"
-              strokeLinecap="round"
-              stroke="rgb(121, 112, 163)"
-              strokeWidth="5"
-              fill="transparent"
-              variants={draw}
-              custom={2}
-            />
-          </motion.svg>
+          
 
           <p className="text-gray-500 text-xl ml-2 flex justify-center gap-1">
             It&apos;s{" "}
@@ -116,7 +118,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg:mt-36 flex justify-center items-center lg:flex-1">
+      <div className="lg:mt-36 flex justify-center items-center lg:flex-1 md:mx-20">
         <div className="w-1 h-48 bg-gray-500 lg:mr-4"></div>
         <div data-aos="fade-left"
                 data-aos-offset="300"
