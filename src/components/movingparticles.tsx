@@ -42,7 +42,7 @@ export default function Particles() {
           [...Array(100)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-[1px] h-[1px] sm:w-1 sm:h-1 bg-blue-900 rounded-full"
+              className="absolute w-[3px] h-[3px] sm:w-1 sm:h-1 bg-blue-900 rounded-full"
               initial={{
                 x: Math.random() * windowWidth, // Use state instead of direct window reference
                 y: Math.random() * windowHeight, // Use state instead of direct window reference

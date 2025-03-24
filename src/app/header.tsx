@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     // <nav className="min-w-lg mx-auto fixed top-0 left-0 text-white lg:h-[7rem] h-[5rem] backdrop-blur-xl z-50 shadow-lg flex md:justify-around justify-between">
-    <nav className="max-w-7xl mx-auto fixed top-0 left-0 right-0 z-50 text-white lg:h-[7rem] h-[5rem] backdrop-blur-xl shadow-lg flex md:justify-around justify-between">
+    <nav className="mx-auto w-full fixed top-0 left-0 right-0 z-50 text-white lg:h-[7rem] h-[5rem] backdrop-blur-xl shadow-lg flex md:justify-around justify-between">
       <div className="relative mt-3 lg:w-[228px] lg:h-[128px] w-[148px]">
         <Image
           src="/logobg.png"

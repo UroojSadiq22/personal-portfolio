@@ -13,7 +13,7 @@ import {
   PhoneCall,
 } from "lucide-react";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Particles from "@/components/movingparticles";
@@ -22,6 +22,47 @@ export default function Contact() {
   useEffect(() => {
     AOS.init({});
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setResponseMessage("Sending...");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setResponseMessage("Message sent successfully! Check your email.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setResponseMessage(data.error || "Something went wrong.");
+      }
+    } catch (error) {
+      console.log(error);
+      setResponseMessage("Failed to send message.");
+    }
+
+  };
+
   return (
     <>
       <Particles />
@@ -106,39 +147,44 @@ export default function Contact() {
             className="lg:w-[27rem] w-full bg-gradient-to-bl from-gray-700 to-[#007EBB] lg:px-10 px-5 py-5 lg:m-6 m-2"
           >
             <h1 className="text-3xl font-bold lg:m-4 m-2">Any Project?</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="grid lg:w-[20rem] max-w-sm items-center gap-1.5 m-4">
                 <Label htmlFor="name">Name</Label>
-                <Input type="text" id="name" placeholder="Your good name" />
+                <Input type="text" id="name" placeholder="Your good name" value={formData.name} onChange={handleChange} required />
               </div>
 
               <div className="grid lg:w-[20rem] max-w-sm items-center gap-1.5 m-4">
                 <Label htmlFor="email">Email</Label>
-                <Input type="email" id="email" placeholder="Email" />
+                <Input type="email" id="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
               </div>
 
               <div className="grid lg:w-[20rem] max-w-sm items-center gap-1.5 m-4">
                 <Label htmlFor="subject">Subject</Label>
-                <Input type="text" id="subject" placeholder="Subject" />
+                <Input type="text" id="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} required />
               </div>
 
               <div className="grid lg:w-[20rem] max-w-sm items-center gap-1.5 m-4">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Write your message here" />
+                <Textarea id="message" placeholder="Write your message here" value={formData.message} onChange={handleChange} required />
               </div>
 
               <div className="grid lg:w-[20rem] max-w-sm items-center gap-1.5 m-4">
                 <Button
+                  type="submit"
                   variant="outline"
                   className="relative overflow-hidden group hover:text-[#007ebb] border-2 border-black transition-all duration-300 ease-in-out"
                 >
                   <span className="absolute inset-0 bg-gray-700 transition-transform duration-300 ease-in-out transform scale-x-0 origin-left group-hover:scale-x-100"></span>
                   <h1 className="relative z-10 font-bold flex items-center gap-2">
-                    Submit Now <ArrowUpRight color="#007ebb" />
+
+                    {responseMessage ? responseMessage : "Submit Now"} <ArrowUpRight color="#007ebb" />
+
                   </h1>
                 </Button>
               </div>
             </form>
+            {responseMessage && <p className="text-white text-center mt-4">{responseMessage}</p>}
+
           </div>
         </div>
       </main>
